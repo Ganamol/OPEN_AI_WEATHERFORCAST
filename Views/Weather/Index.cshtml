@@ -1,0 +1,84 @@
+﻿@model WeatherViewModel
+
+@{
+    ViewData["Title"] = "Live Weather";
+}
+
+<div class="container mt-5">
+
+    <h2 class="text-center mb-4">Live Weather Application</h2>
+
+    <form method="get" asp-action="Index" class="mb-4">
+        <div class="input-group">
+            <input type="text"
+                   name="city"
+                   class="form-control"
+                   placeholder="Enter city name"
+                   value="@(Model?.City ?? "Kochi")" />
+
+            <button type="submit" class="btn btn-primary">
+                Search Weather
+            </button>
+        </div>
+    </form>
+
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger">
+            @ViewBag.Error
+        </div>
+    }
+
+    @if (Model != null)
+    {
+        <div class="card shadow mx-auto text-center"
+             style="max-width:450px;">
+
+            <div class="card-body">
+
+                <h3>@Model.City</h3>
+
+                <img src="@Model.Icon"
+                     alt="@Model.Condition"
+                     width="100" />
+
+                <h1 class="display-3">
+                    @Model.Temperature °C
+                </h1>
+
+                <h4>@Model.Condition</h4>
+
+                <hr />
+
+                <div class="row">
+
+                    <div class="col-6">
+                        <h6>Humidity</h6>
+                        <h4>@Model.Humidity %</h4>
+                    </div>
+
+                    <div class="col-6">
+                        <h6>Wind Speed</h6>
+                        <h4>@Model.WindSpeed km/h</h4>
+                    </div>
+
+                </div>
+
+                <hr />
+
+                <p>
+                    Last Updated: @Model.LastUpdated
+                </p>
+
+            </div>
+        </div>
+    }
+
+</div>
+
+<script>
+    // Refresh weather data every 5 minutes
+    setTimeout(function() {
+        location.reload();
+    }, 300000);
+</script>>
