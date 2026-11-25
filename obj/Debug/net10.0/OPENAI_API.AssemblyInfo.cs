@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OPENAI_API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+32298a621662197783667e24e68c30beeecd6b65")]
 [assembly: System.Reflection.AssemblyProductAttribute("OPENAI_API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OPENAI_API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
